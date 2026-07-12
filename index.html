@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ประวัติเครื่องจักร</title>
-<style>
-  html,body{margin:0;padding:0;height:100%;overflow:hidden}
-  iframe{border:0;width:100%;height:100%;display:block}
-  .load{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-        font-family:sans-serif;color:#1a5276}
-</style>
-</head>
 <body>
-<div class="load" id="ld">กำลังโหลดข้อมูล...</div>
-<iframe id="app" onload="document.getElementById('ld').style.display='none'"></iframe>
-<script>
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyWsCbuEkZ7fHtvAlRSk0n0L91LOrncg_Z4nLLe8j5fPhE3pNNLX6cMqhAfEyDWh9sxgg/exec";
-
-  // ส่งต่อพารามิเตอร์ทั้งหมด (mc, line, topic) เข้าไปใน iframe
-  document.getElementById("app").src = SCRIPT_URL + window.location.search;
-</script>
+  <div class="load" id="id">กำลังโหลดข้อมูลและนำทางไประบบประวัติ...</div>
+  
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycb...Ydwh9sxgg/exec";
+    
+    // ส่งต่อไปยังหน้า Google Web App โดยตรงพร้อมค่าพารามิเตอร์ทั้งหมด
+    window.location.href = SCRIPT_URL + window.location.search;
+  </script>
 </body>
-</html>
