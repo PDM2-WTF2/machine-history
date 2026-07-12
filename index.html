@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ประวัติเครื่องจักร</title>
+<style>
+  html,body{margin:0;padding:0;height:100%;overflow:hidden}
+  iframe{border:0;width:100%;height:100%;display:block}
+  .load{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+        font-family:sans-serif;color:#1a5276}
+</style>
+</head>
+<body>
+<div class="load" id="ld">กำลังโหลดข้อมูล...</div>
+<iframe id="app" onload="document.getElementById('ld').style.display='none'"></iframe>
+<script>
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhPy3Dv95iPUAMhRG3ROs2DtC5VPslYRXF2MO9bCW5k62m-MDZvti1yh0wsDeLMxkRLw/exec";
+
+  // ส่งต่อพารามิเตอร์ทั้งหมด (mc, line, topic) เข้าไปใน iframe
+  document.getElementById("app").src = SCRIPT_URL + window.location.search;
+</script>
+</body>
+</html>
