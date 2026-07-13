@@ -21,7 +21,8 @@
   const q  = new URLSearchParams(window.location.search);
   const mc   = q.get("mc")   || "";
   const line = q.get("line") || "";
-
+const g = q.get("g") || "";
+  if (g) document.title = g;
   if (mc) {
     // เช่น "Steamer - Line # 9" หรือ "Steamer" ถ้าไม่ระบุไลน์
     document.title = mc + (line ? " - Line # " + line : "");
