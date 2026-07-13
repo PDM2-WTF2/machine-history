@@ -15,10 +15,21 @@
 <div class="load" id="ld">กำลังโหลดข้อมูล...</div>
 <iframe id="app" onload="document.getElementById('ld').style.display='none'"></iframe>
 <script>
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyWsCbuEkZ7fHtvAlRSk0n0L91LOrncg_Z4nLLe8j5fPhE3pNNLX6cMqhAfEyDWh9sxgg/exec";
-  
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhPy3Dv95iPUAMhRG3ROs2DtC5VPslYRXF2MO9bCW5k62m-MDZvti1yh0wsDeLMxkRLw/exec";
 
-  // ส่งต่อพารามิเตอร์ (mc, line, topic) เข้าไปยังหน้า Apps Script
+  // ---- ตั้งชื่อแท็บจากพารามิเตอร์ใน URL ----
+  const q  = new URLSearchParams(window.location.search);
+  const mc   = q.get("mc")   || "";
+  const line = q.get("line") || "";
+
+  if (mc) {
+    // เช่น "Steamer - Line # 9" หรือ "Steamer" ถ้าไม่ระบุไลน์
+    document.title = mc + (line ? " - Line # " + line : "");
+  } else if (q.get("topic")) {
+    document.title = "ประวัติงานบำรุงรักษา";
+  }
+
+  // ส่งต่อพารามิเตอร์เข้าไปยังหน้า Apps Script
   document.getElementById("app").src = SCRIPT_URL + window.location.search;
 </script>
 </body>
